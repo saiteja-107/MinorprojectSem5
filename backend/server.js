@@ -2,6 +2,8 @@ const express=require("express")
 const mongoose=require("mongoose")
 const nodemailer = require('nodemailer');
 const app=express()
+var cors = require('cors')
+app.use(cors()) 
 const bodyparser=require("body-parser")
 app.use(bodyparser.urlencoded({extended:true}))
 const MONGO_URI="mongodb+srv://SAI:lmsmanagement@cluster0.sxekr6i.mongodb.net/lms?retryWrites=true&w=majority"
@@ -32,10 +34,10 @@ var mailOptions = {
 
 const mail=mongoose.model("students_details",Schema);
 app.post("/message",(req,res)=>{
-    const user=req.body.user;
-    const section=req.body.section;
-    const subject=req.body.subject
-    const description =req.body.description;
+    const user=req.body.msg.user;
+    const section=req.body.msg.section;
+    const subject=req.body.msg.subject
+    const description =req.body.msg.description;
     mailOptions.subject=subject;
     mailOptions.text=description;
     mail.find({section:section}).then(res=>{
