@@ -13,6 +13,8 @@ function Sliptest(props) {
         option4:"",
         answer:"Answer ",
     })
+
+    
     const Handlesubmit=(event)=>{
         event.preventDefault()
         const val=questionno+1
