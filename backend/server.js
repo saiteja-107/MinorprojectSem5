@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 const app=express()
 const bodyparser=require("body-parser")
 app.use(bodyparser.urlencoded({extended:true}))
-const MONGO_URI="mongodb+srv://SAI:lmsmanagement@cluster0.sxekr6i.mongodb.net/lms?retryWrites=true&w=majority"
+const MONGO_URI=""
 mongoose.set('strictQuery', true);
 mongoose.connect(MONGO_URI,{
     useNewUrlParser: true,
@@ -19,7 +19,7 @@ var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'officialmail.sender@gmail.com',
-    pass: 'zdydyclpndaefryc',
+    pass: '',
   }
 });
 ``
