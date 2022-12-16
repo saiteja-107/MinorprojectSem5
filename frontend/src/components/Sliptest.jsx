@@ -13,8 +13,6 @@ function Sliptest(props) {
         option4:"",
         answer:"Answer ",
     })
-
-    
     const Handlesubmit=(event)=>{
         event.preventDefault()
         const val=questionno+1
@@ -98,10 +96,7 @@ rowsMax={5} />
     <MenuItem value={"B"}>Option 2</MenuItem>
     <MenuItem value={"C"}>Option 3</MenuItem>
     <MenuItem value={"D"}>Option 4</MenuItem>
-
-
   </Select>
-
             {/* <TextField label="Answer  " variant="standard" value={question.answer} onChange={(event)=>{
                 setquestion((prev)=>{
                     return {...prev ,answer:event.target.value}
